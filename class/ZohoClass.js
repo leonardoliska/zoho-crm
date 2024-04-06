@@ -199,7 +199,7 @@ module.exports = class ZohoClass {
         let errorData = [],
         successData = [];
 
-        this.StackPush('MODULES', 'put', { module: moduleName, body: { data: row, ...options } }, (response) => {
+        this.StackPush('MODULES', 'put', { module: moduleName, body: { data: row }, ...options }, (response) => {
           counter++;
           if (response.statusCode === 200 || response.statusCode === 202 || response.statusCode === 207 || response.statusCode === 400) {
             const response_data = JSON.parse(response.body).data;
@@ -272,7 +272,7 @@ module.exports = class ZohoClass {
         let errorData = [],
           successData = [];
 
-        this.StackPush('MODULES', 'post', { module: moduleName, body: { data: row, ...options } }, (response) => {
+        this.StackPush('MODULES', 'post', { module: moduleName, body: { data: row }, ...options }, (response) => {
           counter++;
           if (response.statusCode === 200 || response.statusCode === 201 || response.statusCode === 202 || response.statusCode === 207) {
             const response_data = JSON.parse(response.body).data;
@@ -491,7 +491,7 @@ module.exports = class ZohoClass {
         let errorData = [],
           successData = [];
 
-        this.StackPush('MODULES', 'upsert', { module: moduleName, body: { data: row, duplicate_check_fields: duplicate_check, ...options } }, (response) => {
+        this.StackPush('MODULES', 'upsert', { module: moduleName, body: { data: row, duplicate_check_fields: duplicate_check }, ...options }, (response) => {
           counter++;
           if (response.statusCode === 200 || response.statusCode === 201 || response.statusCode === 202 || response.statusCode === 207) {
             const response_data = JSON.parse(response.body).data;
